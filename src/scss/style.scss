@@ -1,0 +1,14 @@
+@use 'hangman' with ($width: 300px);
+@use 'keyboard';
+@use 'word';
+@use 'game';
+@use 'root';
+@use 'reset';
+@use 'message';
+
+body {
+    font-family : 'Concert One', sans-serif;
+    user-select: none; 
+    height: 100vh;
+    margin: 0;
+}

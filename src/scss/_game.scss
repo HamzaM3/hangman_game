@@ -1,0 +1,8 @@
+.game {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto 3.5rem;
+    align-items: center;
+    justify-items: center;
+    gap: 3rem;
+}

@@ -1,0 +1,12 @@
+.message {
+    font-size: 3rem;
+
+    &.won {
+        color: rgb(113, 177, 93);
+    }
+
+
+    &.lost {
+        color: rgb(207, 99, 99);
+    }
+}

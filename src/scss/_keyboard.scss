@@ -1,0 +1,38 @@
+@use 'utils' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+
+.keyboard {
+    font-size: 2rem;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    gap: 1rem;
+
+    > div {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .unselected-letter, .selected-letter {
+        width: 2.5rem;
+        height: 2.5rem;
+        padding-top: .1rem;
+        margin: 0;
+        text-align: center;
+        border-radius: 5px;
+    }
+
+    .unselected-letter {
+        background: black;
+        color: white;
+        cursor: pointer;
+    }
+
+    .selected-letter {
+        background: #aaa;
+        color: black;
+    }
+}

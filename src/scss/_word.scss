@@ -1,0 +1,20 @@
+.word {
+    font-size: 3rem;
+
+    display: flex;
+    gap: 1rem;
+    justify-self: center;
+
+    .found-letter {
+        width: 3.5rem;
+        height: 3.5rem;
+        text-align: center;
+    }
+
+    .hidden-letter {
+        width: 3.5rem;
+        height: 3.5rem;
+        box-sizing: border-box;
+        border-bottom: .5rem solid black
+    }
+}

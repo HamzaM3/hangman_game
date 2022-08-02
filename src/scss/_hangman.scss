@@ -1,0 +1,149 @@
+@use 'utils' as *;
+
+$width : 600px !default;
+
+.hangman {
+    @include grid-center();
+
+    font-size: $width / 6;
+
+    grid-template-columns: 1.5em 3em 1.5em;
+    grid-template-rows: 1.5em 4em;
+
+    grid-row: 1 / span 3;
+    grid-column: 2;
+
+    .man {
+        @include grid-center();
+        align-self: start;
+
+        .head {
+            width: 1em;
+            height: 1em;
+            border-radius: 50%;
+
+            &.black {
+                border: .2em solid black;
+            }
+
+            background: white;
+    
+            position: relative;
+
+            grid-row: 1;
+            grid-column: 1;
+        }
+
+        .body {
+            width: .2em;
+            height: 3em;
+
+            &.black {
+                background: black;
+            }
+            
+            display: grid;
+            align-items: end;
+            justify-content: center;
+            grid-template-rows: 1.7em 1fr;
+            
+            grid-row: 1 / span 2;
+            grid-column: 1;
+        }
+
+        .limb {
+            display: flex;
+
+            &.top {
+                grid-row: 1;
+                grid-column: 1;
+            }
+            &.bottom {
+                grid-row: 2;
+                grid-column: 1;
+            }
+              
+            &.left {
+                transform: rotate(-45deg);
+            }
+            &.right {
+                transform: rotate(45deg)
+            }
+            
+            &::before, &::after {
+                content: '';
+                display: block;
+    
+                width: 1em;
+                height: .2em;
+    
+                flex-shrink: 0;
+            }
+
+            &.left.black::before, &.right.black::after {
+                background: black;
+            }
+        }
+
+        
+    }
+
+    .bar {
+        &.top {
+            width: 4.5em;
+            height: .2em;
+
+            grid-row: 1;
+            grid-column: 1 / span 3;
+
+            align-self: start;
+        }
+        &.top-left {
+            width: .2em;
+            height: 100%;
+
+            grid-row: 1;
+            grid-column: 1;
+        }
+        &.top-right {
+            display: flex;
+            justify-content: center;
+            border-radius: .5em;
+            transform:  translateY(1.4em) rotate(45deg);
+
+            &::before, &::after {
+                content: '';
+                display: block;
+                height: .2em;
+                width: 2em;
+                flex-shrink: 0;
+            }
+            &.black::before {
+                background: black;
+                border-radius: .5em;
+            }
+        }
+        &.right {
+            width: .2em;
+            grid-row: 1 / span 2;
+            grid-column: 3;
+            align-self: stretch;
+        }
+        &.bottom {
+            height: .2em;
+            grid-row:  2;
+            grid-column: 3;
+            justify-self: stretch;
+            align-self: end;
+        }
+        &.black{
+            background: black;
+        }
+    }
+}
+
+// ..
+  
+
+
+  
